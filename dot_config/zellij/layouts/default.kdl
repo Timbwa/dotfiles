@@ -1,0 +1,13 @@
+layout {
+	pane_template name="compact_bar" borderless=true {
+		plugin location="zellij:compact-bar"
+	}
+	pane_template name="status_bar" borderless=true {
+		plugin location="zellij:status-bar"
+	}
+	tab name="Sesh" focus=true {	
+		compact_bar size=1 {}
+		pane
+		status_bar size=1 {}
+	}
+}

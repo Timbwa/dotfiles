@@ -1,0 +1,28 @@
+layout {
+	pane_template name="cargo" {
+		command "cargo"
+		start_suspended true
+	}
+	pane_template name="compact_bar" borderless=true {
+		plugin location="zellij:compact-bar"
+	}
+	tab name="Editor&Cargo" focus=true {	
+		compact_bar size=1 {}
+		pane split_direction="vertical" {	
+			pane edit="src/main.rs" size=126 borderless=true 
+
+			pane split_direction="horizontal" { 
+				cargo { args "clippy"; }
+				cargo { args "test"; }
+				cargo { args "run"; }
+			}
+		}
+	}
+	tab name="git&pomo" focus=false {
+		compact_bar size=1 {}
+		pane split_direction="vertical" {
+			pane command="gitui" size=126 borderless=true
+			pane name="pomodoro"
+		}
+	}
+}
