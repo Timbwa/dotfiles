@@ -7,7 +7,6 @@ layout {
 		plugin location="zellij:compact-bar"
 	}
 	tab name="Editor&Cargo" focus=true {	
-		compact_bar size=1 {}
 		pane split_direction="vertical" {	
 			pane edit="src/main.rs" size=126 borderless=true 
 
@@ -17,12 +16,13 @@ layout {
 				cargo { args "run"; }
 			}
 		}
+		compact_bar size=1 {}
 	}
 	tab name="git&pomo" focus=false {
-		compact_bar size=1 {}
 		pane split_direction="vertical" {
 			pane command="gitui" size=126 borderless=true
 			pane name="pomodoro"
 		}
+		compact_bar size=1 {}
 	}
 }

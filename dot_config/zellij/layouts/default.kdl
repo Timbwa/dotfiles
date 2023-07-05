@@ -5,9 +5,10 @@ layout {
 	pane_template name="status_bar" borderless=true {
 		plugin location="zellij:status-bar"
 	}
-	tab name="Sesh" focus=true {	
-		compact_bar size=1 {}
+	default_tab_template {
 		pane
-		status_bar size=1 {}
+		compact_bar size=1 {}
+		//status_bar size=1 {}
 	}
+	tab name="Sesh" focus=true
 }
